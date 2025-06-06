@@ -23,3 +23,14 @@ invoke-coqmakefile: Makefile.coq
 # This should be the last rule, to handle any targets not declared above
 %: invoke-coqmakefile
 	@true
+
+clean:
+# remove all coq generated files from all subdirectories
+	find . -name "*.vo" -type f -delete
+	find . -name "*.glob" -type f -delete
+	find . -name "*.v.d" -type f -delete
+	find . -name "*.vo.d" -type f -delete
+	find . -name "*.vo.aux" -type f -delete
+	find . -name "*.vok" -type f -delete
+	find . -name "*.vos" -type f -delete
+	find . -name "*.aux" -type f -delete
